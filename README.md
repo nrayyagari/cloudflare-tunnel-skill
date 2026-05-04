@@ -1,52 +1,38 @@
-# cloudflare-tunnel-skill
+# Cloudflare Tunnel Skill
 
-Pi skill for setting up and managing [Cloudflare Tunnels](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/) (`cloudflared`).
+A skill/instruction set for AI coding agents (Claude, Pi, Codex, OpenCode, Cursor, Gemini, etc.) to set up and manage Cloudflare Tunnels (`cloudflared`).
 
 Expose local web services through Cloudflare's edge network without opening firewall ports.
-
-## Installation
-
-```bash
-pi install git:github.com/nrayyagari/cloudflare-tunnel-skill
-```
-
-## Usage
-
-Ask Pi to expose a local service:
-
-> "Set up a Cloudflare tunnel for my docs on port 8080"
-> "Create a tunnel and serve my app from localhost:3000"
-> "My tunnel is returning 502, fix it"
-
-Pi will load the skill automatically based on the description trigger.
 
 ## What it covers
 
 - Installing `cloudflared`
-- Token-based and login-based tunnels
+- Token-based and login-based tunnel authentication
 - Local origin server setup (Python, nginx)
 - Systemd service persistence
 - Self-signed TLS certs with SANs + CA trust
-- DNS configuration
-- Troubleshooting common errors (502, 521, cert issues)
+- DNS configuration via dashboard or CLI
+- Troubleshooting 502, 521, and TLS cert errors
 
 ## Structure
 
 ```
 cloudflare-tunnel-skill/
-├── package.json
-├── README.md
-└── skills/
-    └── cloudflare-tunnel/
-        ├── SKILL.md
-        ├── scripts/
-        │   ├── setup-tunnel.sh
-        │   └── verify-tunnel.sh
-        └── references/
-            ├── troubleshooting.md
-            └── architecture.md
+├── SKILL.md                   # Main workflow — load this into the agent
+├── scripts/
+│   ├── setup-tunnel.sh        # Automated setup script
+│   └── verify-tunnel.sh       # Health check script
+└── references/
+    ├── troubleshooting.md     # Deep-dive error resolution
+    └── architecture.md        # How Cloudflare Tunnels work
 ```
 
-## License
+## Usage
 
-MIT
+Load `SKILL.md` into your agent's context, or reference it when asking about Cloudflare Tunnels. The agent will follow the steps for installation, configuration, and troubleshooting.
+
+## Requirements
+
+- A domain on Cloudflare (DNS managed by Cloudflare)
+- `cloudflared` binary (install steps in SKILL.md)
+- Linux (Ubuntu/Debian) — adapt scripts for other OS

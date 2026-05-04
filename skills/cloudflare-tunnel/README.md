@@ -1,9 +1,9 @@
 # Cloudflare Tunnel Skill
 
-Pi skill for setting up and managing [Cloudflare Tunnels](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/).
+Skill file for AI coding agents to set up and troubleshoot Cloudflare Tunnels.
 
-## Installation
-
-```bash
-pip install git:github.com/nrayyagari/cloudflare-tunnel-skill
-```
+- **Main instructions:** [`SKILL.md`](./SKILL.md)
+- **Automated setup:** [`scripts/setup-tunnel.sh`](./scripts/setup-tunnel.sh)
+- **Health check:** [`scripts/verify-tunnel.sh`](./scripts/verify-tunnel.sh)
+- **Troubleshooting:** [`references/troubleshooting.md`](./references/troubleshooting.md)
+- **Architecture:** [`references/architecture.md`](./references/architecture.md)
