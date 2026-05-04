@@ -1,0 +1,10 @@
+{
+  "name": "cloudflare-tunnel-skill",
+  "version": "1.0.0",
+  "description": "Pi skill for setting up and managing Cloudflare Tunnels (cloudflared)",
+  "keywords": ["pi-package", "pi-skill"],
+  "license": "MIT",
+  "pi": {
+    "skills": ["./skills"]
+  }
+}
