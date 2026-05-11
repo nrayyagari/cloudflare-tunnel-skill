@@ -1,3 +1,7 @@
+---
+name: cloudflare-tunnel
+description: "Use when setting up Cloudflare Tunnel (cloudflared) to expose local HTTP/HTTPS services through Cloudflare's edge. Covers token-based and login-based auth, TLS certificate setup for origin servers, systemd service configuration, DNS routing, and troubleshooting (502, 521, 403, cert errors). No open ports or public IP needed."
+---
 # Cloudflare Tunnel Skill
 
 Expose local HTTP/HTTPS services through Cloudflare's edge using `cloudflared`. No open ports, no public IP needed.
